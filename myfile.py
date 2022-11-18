@@ -4,6 +4,6 @@ import numpy as np
 
 st.title('SUNEDU')
 st.subheader('Instituciones licenciadas')
-url=https://github.com/gianelaflores/proyecto-programacion/blob/documentos/Licenciamiento%20Institucional_7.csv1
+url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
 file=pd.read_csv(url, sep=',')
 st.line_chart(data=file,x='Nombre de universidad', y='Periodo de licenciamiento')
