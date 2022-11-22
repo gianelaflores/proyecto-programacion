@@ -9,4 +9,4 @@ file=pd.read_csv(url, sep=',')
 st.line_chart(data=file,x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
 st.subheader('Tabla de datos')
 
-st.table('CODIGO_ENTIDAD','NOMBRE')
+st.table(data=file,columns=('CODIGO_ENTIDAD','NOMBRE'))
