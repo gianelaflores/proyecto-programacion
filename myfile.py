@@ -5,7 +5,6 @@ from datatime import time
 appointment = st.slider("Programe la asesoria:",value=(time(11, 30), time(12, 45)))
 st.write("Esta agendado para:", appointment)
 
-
 st.title('SUNEDU')
 st.subheader('Instituciones licenciadas')
 url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
