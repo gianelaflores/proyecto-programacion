@@ -10,3 +10,5 @@ st.line_chart(data=file,x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
 st.subheader('Tabla de datos')
 
 st.table(data=file, 'CODIGO_ENTIDAD', 'NOMBRE')
+df = pd.DataFrame(data=file,columns=('col %d' % i for i in range(2)))
+st.table(df)
