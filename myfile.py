@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import time
+#hora
 appointment = st.slider("Programe la asesoria:",value=(time(11, 30), time(12, 45)))
 st.write("Esta agendado para:", appointment)
+
+#fechas
+d = st.date_input("Fecha",datetime.date(2019, 7, 6))st.write('tu cita es :', d)
 
 st.title('SUNEDU')
 st.subheader('Instituciones licenciadas')
