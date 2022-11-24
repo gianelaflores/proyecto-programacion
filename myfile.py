@@ -11,6 +11,10 @@ st.write("Esta agendado para:", appointment)
 d = st.date_input("Fecha",datetime.date(2019, 7, 6))
 st.write('Tu cumpleños es:', d)
 
+n = st.slider("n", 5,100, step=1)
+chart_data = pd.DataFrame(np.random.randn(n),columns=['data'])
+st.line_chart(chart_data)
+
 st.title('SUNEDU')
 st.subheader('Instituciones licenciadas')
 url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
