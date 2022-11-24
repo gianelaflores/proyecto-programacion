@@ -8,7 +8,7 @@ appointment = st.slider("Programe la asesoria:",value=(time(11, 30), time(12, 45
 st.write("Esta agendado para:", appointment)
 
 #fechas
-d = st.date_input("Fecha de cumpleaños",datetime.date(2019, 7, 6))
+d = st.date_input("Fecha",datetime.date(2019, 7, 6))
 st.write('Tu cumpleños es:', d)
 
 st.title('SUNEDU')
