@@ -1,27 +1,22 @@
+#$ pip install streamlit --upgrade
 import streamlit as st
+import urllib.request
 import pandas as pd
 import numpy as np
-from datetime import time
-import datetime 
-#hora
-appointment = st.slider("Programe la asesoria:",value=(time(11, 30), time(12, 45)))
-st.write("Esta agendado para:", appointment)
 
-#fechas
-d = st.date_input("Fecha",datetime.date(2019, 7, 6))
-st.write('Tu cumpleños es:', d)
+st.header("LICENCIAMIENTO INSTITUCIONAL")
+@st.experimental_memo
 
-n = st.slider("n", 5,100, step=1)
-chart_data = pd.DataFrame(np.random.randn(n),columns=['data'])
-st.line_chart(chart_data)
+def download_data():
+   url="https://www.datosabiertos.gob.pe/sites/default/files/Licenciamiento%20Institucional_7.csv"
+   filename="Licenciamiento%20Institucional_7.xlsx"
+   urllib.request.urlretrieve(url,filename)
+   df=pd.read_csv('Licenciamiento%20Institucional_7.xlsx')
+   return df
+c=download_data()
+st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+st.dataframe(c)
+st.subheader("Características del Dataset")
+st.write(c.describe())
 
-#coordenadas
-f = pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],columns=['lat', 'lon'])
-#titulo (aqui inicia)
-st.title('SUNEDU')
-st.subheader('Instituciones licenciadas')
-url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
-file=pd.read_csv(url, sep=',')
-st.line_chart(data=file,x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
-st.subheader('Tabla de datos')
-st.table(data=file,columns=('CODIGO_ENTIDAD','NOMBRE'))
+st.title('Universidades') 
