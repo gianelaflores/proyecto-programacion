@@ -20,3 +20,8 @@ st.subheader("Características del Dataset")
 st.write(c.describe())
 
 st.title('Universidades') 
+
+#url del archivo en formato raw
+url = 'https://raw.githubusercontent.com/Gandy2704/programacion/documentos/Licenciamiento%20Institucional_7%20-%20Licenciamiento%20Institucional_7.csv'
+datos = pd.read_csv(url,sep= ',')
+st.line_chart(data=datos, x='CODIGO_ENTIDAD', y='NOMBRE')
