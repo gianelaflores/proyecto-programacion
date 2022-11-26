@@ -20,6 +20,6 @@ if uploaded_file is not None:
     except Exception as e:
         print(e)
         df=pd.read_excel(uploaded_file)
-
+st.write(df)
 
 
