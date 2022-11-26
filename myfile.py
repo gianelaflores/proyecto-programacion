@@ -24,6 +24,6 @@ url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/docum
 file=pd.read_csv(url, sep=',')
 st.line_chart(data=file,x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
 st.subheader('Tabla de datos')
-st.table(data=file,columns=('CODIGO_ENTIDAD','NOMBRE'))
+st.table(data=file,columns=('CODIGO_ENTIDAD','UBIGEO'))
 n  =  st .slider( "codigo entidad" ,1,149 , paso = 1 )
 st . line_chart ( datos = archivo , x = 'CODIGO_ENTIDAD' , y = 'UBIGEO' )
