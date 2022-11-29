@@ -8,7 +8,7 @@ st.title("DATA SUNEDU")
 st.sidebar.subheader("visualizacion de configuraciones")
 
 #setup file upload
-uploaded_file=st.sidebar.file_uploader(label="upload your CSV or Excel file",
+uploaded_file=st.sidebar.file_uploader(label="subir tu CVS o archivo excel",
                          type=["csv","xlsx"])
 global df
 if uploaded_file is not None:
@@ -20,6 +20,25 @@ if uploaded_file is not None:
     except Exception as e:
         print(e)
         df=pd.read_excel(uploaded_file)
-st.write(df)
+global numeric_columns
+try:
+    st.write(df)
+    numeric_columns=list (df.select_dtypes(["float","int"]).columns)
+except Exception as e:
+    print(e)
+    st.write("porfavor subir archivopara la aplicacion")
+#agregar a seleccion de barra
+chart_select= st.siderbar.selectbox( label="seleccionar el tipo grafico" ,
+                                      options= "histograma", "intervalos")
+
+if chart_select=="histograma":
+    st.sidebar.subheader("histograma configuraciones")
+    try:
+      x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
+      y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
+    except Exception as e :
+        print(e)
+
+
 
 
