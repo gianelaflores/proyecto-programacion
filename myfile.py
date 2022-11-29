@@ -1,4 +1,4 @@
-import streamlit as st
+ import streamlit as st
 import pandas as pd
 
 #titulo del app
@@ -20,6 +20,7 @@ if uploaded_file is not None:
     except Exception as e:
         print(e)
         df=pd.read_excel(uploaded_file)
+st.write(df)
 global numeric_columns
 try:
     st.write(df)
@@ -38,7 +39,3 @@ if chart_select=="histograma":
       y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
     except Exception as e :
         print(e)
-
-
-
-
