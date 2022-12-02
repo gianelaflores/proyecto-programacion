@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 
 
 st.set_page_config(layout="wide", initial_sidebar_state='expanded')
-with open('logo.css) as f : 
+with open('logo.css) as f: 
     st.markdown(f'<style>{f.read()}</logo>',unsafe_allow_html=True)
 with st.sidebar:
     st.markdown('###')
