@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
+import matplotlib.pyplot as plt
 
 
 st.set_page_config(layout="wide", initial_sidebar_state='expanded')
