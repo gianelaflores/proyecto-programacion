@@ -5,6 +5,8 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
+from PIL import Image
+
 
 
 st.set_page_config(layout="wide", initial_sidebar_state='expanded')
@@ -37,6 +39,11 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
 
+#--
+if selected == 'Equipo':
+    image = Image.open('amigos.jpg')
+    st.image(image) 
+    
 #--    
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')    
 if selected == 'Analisis':
