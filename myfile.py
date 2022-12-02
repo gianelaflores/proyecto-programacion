@@ -68,7 +68,7 @@ if selected == 'Analisis de dataset':
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
-        grafico lineas
+        #grafico lineas
         url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
         datos=pd.read_csv(url,sep=',')
         st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
