@@ -11,6 +11,9 @@ st.header('DATA SUNEDU')
 st.write('Analicemos los datos')
 st.line_chart(data=datos, x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
 
+url ='https://github.com/gianelaflores/proyecto-programacion/blob/documentos/MODIFICADA%20TABLA%20SUNEDU.csv'
+datos = pd.read_csv(url, sep=',')
+
 st.header('tABLA DE ANALISIS')
 st.write('ANALICEMOS RANGOS')
 st.line_chart(data=datos, x='PERIODO_LICENCIAMIENTO', y=['Price', 'High', 'Low'])
@@ -65,7 +68,6 @@ st.pydeck_chart(pdk.Deck(
         ),
     ],
 ))
-
 
     
 
