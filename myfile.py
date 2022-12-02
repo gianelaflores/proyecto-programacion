@@ -1,60 +1,70 @@
-import streamlit as st
 import pandas as pd
+import streamlit as st
+import numpy as np
+import pydeck as pdk
 
-#titulo del app
-st.title("LICENCIAMIENTO INSTITUCIONAL DE LAS UNIVERSIDADES PERUANAS")
-st.write("!Bienvenido¡")
-st.write("Les presentamos nuestra plataforma con los datos organizados de SENEDU, para su mejor compresion y visualizacion")
-st.subheader("DATA SENEDU")
+url = 'https://raw.githubusercontent.com/PeterTXS09/streamlit_demo/main/USD_PEN%20Historical%20Data2.csv'
+datos = pd.read_csv(url, sep=',')
+
+st.title('Precio del dólar')
+st.header('Precio del dólar a lo largo del tiempo')
+st.write('Analicemos el precio del dólar a lo largo del perido')
+st.line_chart(data=datos, x='Date', y='Price')
+
+st.header('Precio del dólar en el día - valor más alto y bajo')
+st.write('Analicemos el precio del dólar a lo largo del perido establecido vs el valor más alto y más bajo')
+st.line_chart(data=datos, x='Date', y=['Price', 'High', 'Low'])
 
 
-#add s sidebar
-st.sidebar.subheader("visualizacion de configuraciones")
+st.header('Ejemplo de mapa')
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
+st.map(df)
 
-#setup file upload
-uploaded_file=st.sidebar.file_uploader(label="subir tu CVS o archivo excel",
-                         type=["csv","xlsx"])
-global df
-if uploaded_file is not None:
-    print(uploaded_file)
-    print("hello")
-    
-    try:
-        df=pd.read_csv(uploaded_file)
-    except Exception as e:
-        print(e)
-        df=pd.read_excel(uploaded_file)
+st.header('tabla de datos')
+st.table(df.head(5))
 
-global numeric_columns
-try:
-    st.write(df)
-    numeric_columns=df.select_dtypes(["float","int"]).columns
-except Exception as e:
-    print(e)
-    st.write("porfavor subir archivopara la aplicacion")
-#agregar a seleccion de barra
-chart_select= st.sidebar.selectbox( label="seleccionar el tipo grafico" ,
-                                      options= ["diagrama de dispersion",
-                                                "histograma", "grafico de intervalos"])
+st.header('Ejemplo de dataframe')
+chart_data = pd.DataFrame(
+   np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+   columns=['lat', 'lon'])
 
-if chart_select=="histograma":
-    st.sidebar.subheader("histograma configuraciones")
-    try:
-      x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
-      y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
-      plot=px.scatter(data_frame=df , x=x_values,y=y_values)
-    except Exception as e :
-        print(e)
-if chart_select=="diagram de dispersion":
-    st.sidebar.subheader("configuracion D.dispersion")
-    try:
-      x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
-      y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
-      
-      
-    except Exception as e :
-        print(e)
+st.header('Precio del dolar por año')
+periodo = st.slider('Seleccionar un año', 2014, 2022, 2014, 1)
+st.write("Mostrando precio del dolar en el periodo", periodo)
+# acá se actualiza el periodo desde el archivo datos (filtrar con lo visto en la unidad 2)
 
+
+st.header('Ejemplo de mapa')
+st.pydeck_chart(pdk.Deck(
+    map_style=None,
+    initial_view_state=pdk.ViewState(
+        latitude=37.76,
+        longitude=-122.4,
+        zoom=5,
+        pitch=70,
+    ),
+    layers=[
+        pdk.Layer(
+           'HexagonLayer',
+           data=chart_data,
+           get_position='[lon, lat]',
+           radius=200, #acumula los valores
+           elevation_scale=4, #da una escala de 0 a 4
+           elevation_range=[0, 1000], # total de posibles valores
+           pickable=True,
+           extruded=True,
+        ),
+        pdk.Layer(
+            'ScatterplotLayer',
+            data=chart_data,
+            get_position='[lon, lat]',
+            get_color='[200, 30, 0, 160]',
+            get_radius=200,
+        ),
+    ],
+))
 
     
 
