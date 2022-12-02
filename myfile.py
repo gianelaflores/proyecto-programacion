@@ -20,7 +20,7 @@ if uploaded_file is not None:
     print("hello")
     
     try:
-       df=pd.read_csv(uploaded_file)
+        df=pd.read_csv(uploaded_file)
     except Exception as e:
         print(e)
         df=pd.read_excel(uploaded_file)
@@ -28,7 +28,7 @@ if uploaded_file is not None:
 global numeric_columns
 try:
     st.write(df)
-    numeric_columns=list(df.select_dtypes(["float","int"]).columns)
+    numeric_columns=df.select_dtypes(["float","int"]).columns
 except Exception as e:
     print(e)
     st.write("porfavor subir archivopara la aplicacion")
@@ -50,12 +50,10 @@ if chart_select=="diagram de dispersion":
     try:
       x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
       y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
-      st.line_chart(data=uploaded_file, x=x_valores, y=y_valores)
       
       
     except Exception as e :
         print(e)
-
 
 
     
