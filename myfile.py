@@ -11,8 +11,12 @@ st.header('DATA SUNEDU')
 st.write('Analicemos los datos')
 st.line_chart(data=datos, x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
 
-urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv'
-datos2=pd.read_csv(urp,sep=',')
+#mapa
+st.header(' Mapa')
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['LATITUD', 'LONGITUD'])
+st.map(df)
 
 
 
