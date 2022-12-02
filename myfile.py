@@ -4,7 +4,7 @@ import numpy as np
 import pydeck as pdk
 
 url ='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
-datos = pd.read_csv(url, sep=',')
+datos = pd.read_csv(url)
 
 st.title('LICENCIAMIENTO INSTITUCIONAL-SUNEDU')
 st.header('DATA SUNEDU')
