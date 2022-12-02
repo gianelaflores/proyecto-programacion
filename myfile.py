@@ -44,10 +44,10 @@ if selected == 'Analisis':
         'Seleccione una opción:',
         ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
         )
-    option = '-'
+    #option = '-'
     if dataset == 'Licencia otorgada':
-        option = 'licencia otorgada'
-        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        #option = 'licencia otorgada'
+        st.write('*Gráfico')
         @st.cache
         def otorgada_data():
             df_otorgada = pd.read_csv('otorgadas.csv')
@@ -58,11 +58,8 @@ if selected == 'Analisis':
             return df_otorgada
         data = otorgada_data()
         st.map(data)        
-        st.markdown("###")
-        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
-        st.dataframe(df_otorgada)
-        n = len(df_otorgada.axes[0]) 
-        
+        #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        #st.dataframe(df_otorgada)        
                                              
             
             
