@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
-
+import plotly_express as px
 #titulo del app
 st.title("LICENCIAMIENTO INSTITUCIONAL DE LAS UNIVERSIDADES PERUANAS")
-st.subheader("DATA SENEDU")
 st.write("!Bienvenido¡")
 st.write("Les presentamos nuestra plataforma con los datos organizados de SENEDU, para su mejor compresion y visualizacion")
+st.subheader("DATA SENEDU")
+
 
 #add s sidebar
 st.sidebar.subheader("visualizacion de configuraciones")
@@ -27,18 +28,30 @@ if uploaded_file is not None:
 global numeric_columns
 try:
     st.write(df)
-    numeric_columns=list (df.select_dtypes(["float","int"]).columns)
+    numeric_columns=list(df.select_dtypes(["float","int"]).columns)
 except Exception as e:
     print(e)
     st.write("porfavor subir archivopara la aplicacion")
 #agregar a seleccion de barra
 chart_select= st.sidebar.selectbox( label="seleccionar el tipo grafico" ,
-                                      options= ["histograma", "grafico de intervalos"])
+                                      options= ["diagrama de dispersion",
+                                                "histograma", "grafico de intervalos"])
 
 if chart_select=="histograma":
     st.sidebar.subheader("histograma configuraciones")
     try:
       x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
       y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
+      plot=px.scatter(data_frame=df , x=x_values,y=y_values)
     except Exception as e :
-        print(e)        
+        print(e)
+if chart_select=="diagram de dispersion":
+    st.sidebar.subheader("configuracion D.dispersion")
+    try:
+      x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
+      y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
+      plot=px.scatter(data_frame=df , x=x_values,y=y_values)
+      #monitor de grafico de visualizacion
+      st.plotly_chart(plot)
+    except Exception as e :
+        print(e)
