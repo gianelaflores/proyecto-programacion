@@ -13,7 +13,7 @@ with open('upch.css') as f :
 with st.sidebar:
     st.markdown('###')
     st.sidebar.header ('Programación')
-    selected= option menu(
+    selected= option_menu(
         menu_title='Menú'
         options=['Inicio','Equipo','Analisis','reporte']
         icons=['house','person','glass','book']
