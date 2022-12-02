@@ -14,7 +14,7 @@ with st.sidebar:
     selected= option_menu(
         menu_title='Menú',
         options=['Inicio','Equipo','Analisis','reporte'],
-        icons=['house','person','glass','book'],
+        icons=['house','person','book','book'],
         menu_icon='cast',
         default_index= 0,
     )
