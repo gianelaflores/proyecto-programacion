@@ -2,7 +2,10 @@ import streamlit as st
 import pandas as pd
 
 #titulo del app
-st.title("DATA SUNEDU")
+st.title("LICENCIAMIENTO INSTITUCIONAL DE LAS UNIVERSIDADES PERUANAS")
+st.subheader("DATA SENEDU")
+st.write("!Bienvenido¡")
+st.write("Les presentamos nuestra plataforma con los datos organizados de SENEDU, para su mejor compresion y visualizacion")
 
 #add s sidebar
 st.sidebar.subheader("visualizacion de configuraciones")
@@ -30,7 +33,7 @@ except Exception as e:
     st.write("porfavor subir archivopara la aplicacion")
 #agregar a seleccion de barra
 chart_select= st.sidebar.selectbox( label="seleccionar el tipo grafico" ,
-                                      options= ["histograma", "intervalos"])
+                                      options= ["histograma", "grafico de intervalos"])
 
 if chart_select=="histograma":
     st.sidebar.subheader("histograma configuraciones")
@@ -38,5 +41,4 @@ if chart_select=="histograma":
       x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
       y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
     except Exception as e :
-        print(e)
-        
+        print(e)        
