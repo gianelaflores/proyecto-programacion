@@ -35,3 +35,36 @@ if selected == 'Inicio':
         return df_cat
     download_data()
     st.dataframe(download_data())
+
+    
+df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')    
+if selected == 'Analisis':
+    dataset= st.selectbox(
+        'Indicación',
+        ('Licencia ortorgada',
+         '2'
+         '3'
+         '4')
+    )
+    if dataset == 'Licencia otorgada':
+        st.write('Grafico.')
+        @st.cache
+        def otorgada():
+            df_otorgada = pd.read_csv('otorgadas.csv')
+            df_otorgada = df_otorgada.rename(columns={
+                'LATITUD':'latitude',
+                'LONGITUD':'longitude',
+            })
+            return df_otorgada
+        datos = otorgada()
+        st.map(datos)
+        
+        
+                                             
+            
+            
+            
+            
+            
+        
+    
