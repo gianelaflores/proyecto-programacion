@@ -1,22 +1,22 @@
-import pandas as pd
 import streamlit as st
+import pandas as pd
 import numpy as np
-import pydeck as pdk
+import urllib.request
+from streamlit_option_menu import option_menu
+import matplotlib.pyplot as plt
+import plotly.figure_factory as ff
+import scipy
 
-url ='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
-datos = pd.read_csv(url, sep=',')
-
-st.title('LICENCIAMIENTO INSTITUCIONAL-SUNEDU')
-st.header('DATA SUNEDU')
-st.write('Analicemos los datos')
-st.line_chart(data=datos, x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
-
-#mapa
-st.header(' Mapa')
-df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=(['LATITUD', 'LONGITUD'])
-st.map(df)
-
-
-
+st.set_page_config(layout="wide",initial_sidebar_state='expanded')
+with open('upch.css') as f :
+    st.markdown(f'<style>{f.read()}</upch>',unsafe_allow_html=True)
+with st.sidebar:
+    st.markdown('###')
+    st.sidebar.header ('Programación')
+    selected= option menu(
+        menu_title='Menú'
+        options=['Inicio','Equipo','Analisis','reporte']
+        icons=['house','person','glass','book']
+        menu_icon='cast',
+        default_index= 0,
+    )
