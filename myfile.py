@@ -12,7 +12,7 @@ st.write('Analicemos los datos')
 st.line_chart(data=datos, x='CODIGO_ENTIDAD', y='PERIODO_LICENCIAMIENTO')
 
 urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv'
-datos2=pd.read_csv(urp)    
+datos2=pd.read_csv(urp,sep=',')
 
 
 
