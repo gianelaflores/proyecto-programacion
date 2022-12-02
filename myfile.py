@@ -46,7 +46,7 @@ if selected == 'Equipo':
     
 #--    
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')    
-if selected == 'Analisis':
+if selected == 'Analisis de dataset':
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
@@ -69,9 +69,9 @@ if selected == 'Analisis':
         #st.dataframe(df_otorgada)  
         
         #grafico lineas
-        #url=''
+        #url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
         #datos=pd.read_csv(url,sep=',')
-        #st.linechart(data=datos,x='',y='')
+        #st.linechart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
         
         #grafico circulo
         df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
