@@ -67,7 +67,8 @@ if selected == 'Analisis':
         #st.linechart(data=datos,x='',y='')
         
         #grafico circulo
-        df_ESTADO_LICENCIAMIENTO = pd.read_csv('Licenciamiento%20Institucional_7.csv')
+        df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
+        df_ESTADO_LICENCIAMIENTO ='none'
         pie_chart = df_ESTADO_LICENCIAMIENTO.value_counts()
         pie_chart = pd.DataFrame(pie_chart)
         pie_chart = pie_chart.reset_index()
