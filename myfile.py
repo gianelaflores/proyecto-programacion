@@ -52,12 +52,12 @@ if selected == 'Analisis':
         def otorgada():
             df_otorgada = pd.read_csv('otorgadas.csv')
             df_otorgada = df_otorgada.rename(columns={
-                'LATITUD':'latitude',
-                'LONGITUD':'longitude',
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
             })
             return df_otorgada
-        datos = otorgada()
-        st.map(datos)
+        data = otorgada()
+        st.map(data)
         
         
                                              
