@@ -1,6 +1,7 @@
 import streamlit as st
-import pandas as pd
 import plotly.express as px
+import pandas as pd
+
 #titulo del app
 st.title("LICENCIAMIENTO INSTITUCIONAL DE LAS UNIVERSIDADES PERUANAS")
 st.write("!Bienvenido¡")
