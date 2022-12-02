@@ -45,8 +45,9 @@ if selected == 'Equipo':
     st.image(image) 
     
 #--    
-df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')    
-if selected == 'Analisis de dataset':
+df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+
+if selected == 'Analisis':
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
