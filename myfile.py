@@ -41,23 +41,22 @@ df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proye
 if selected == 'Analisis':
     dataset= st.selectbox(
         'Indicación',
-        ('Licencia ortorgada',
-         '2',
-         '3',
-         '4')
+        ('Licencia ortorgada', '2','3','4')
     )
     if dataset == 'Licencia otorgada':
+        option:'-'
         st.write('Grafico.')
         @st.cache
-        def otorgada():
+        def otorgada_data():
             df_otorgada = pd.read_csv('otorgadas.csv')
             df_otorgada = df_otorgada.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
             })
             return df_otorgada
-        data = otorgada()
+        data = otorgada_data()
         st.map(data)
+        
         
         
                                              
