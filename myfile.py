@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import urllib_request
 from streamlit_option_menu import option_menu
-import matplotlib_pyplot as plt
-import plotly_figure_factory as ff
-import scipy
+
 
 st.set_page_config(layout="wide",initial_sidebar_state='expanded')
 with open('upch.css') as f :
