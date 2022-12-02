@@ -69,9 +69,9 @@ if selected == 'Analisis de dataset':
         #st.dataframe(df_otorgada)  
         
         #grafico lineas
-        url='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
-        datos=pd.read_csv(url,sep=',')
-        st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
+        #urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
+        #datos=pd.read_csv(urp,sep=',')
+        #st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
         
         #grafico circulo
         df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
