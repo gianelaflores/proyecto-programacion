@@ -44,9 +44,9 @@ if selected == 'Analisis':
         'Seleccione una opción:',
         ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
         )
-    option = '-'
+    #option = '-'
     if dataset == 'Licencia otorgada':
-        option = 'licencia otorgada'
+        #option = 'licencia otorgada'
         st.write('*Gráfico')
         @st.cache
         def otorgada_data():
@@ -58,8 +58,27 @@ if selected == 'Analisis':
             return df_otorgada
         data = otorgada_data()
         st.map(data)        
-        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
-        st.dataframe(df_otorgada)        
+        #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        #st.dataframe(df_otorgada)  
+        
+        #grafico lineas
+        #url=''
+        #datos=pd.read_csv(url,sep=',')
+        #st.linechart(data=datos,x='',y='')
+        
+        #grafico circulo
+        df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
+        pie_chart = df_ESTADO_LICENCIAMIENTO.value_counts()
+        pie_chart = pd.DataFrame(pie_chart)
+        pie_chart = pie_chart.reset_index()
+        pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
+        fig1, ax1 = plt.subplots()
+        ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+        ax1.axis('equal')
+        st.write('Gráfico')
+        st.pyplot(fig1)
+
+        
                                              
             
             
