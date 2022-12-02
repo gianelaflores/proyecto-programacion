@@ -14,9 +14,9 @@ with st.sidebar:
     st.markdown('###')
     st.sidebar.header ('Programación')
     selected= option_menu(
-        menu_title='Menú'
-        options=['Inicio','Equipo','Analisis','reporte']
-        icons=['house','person','glass','book']
+        menu_title='Menú',
+        options=['Inicio','Equipo','Analisis','reporte'],
+        icons=['house','person','glass','book'],
         menu_icon='cast',
         default_index= 0,
     )
