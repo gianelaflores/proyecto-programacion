@@ -44,9 +44,9 @@ if selected == 'Analisis':
         'Seleccione una opción:',
         ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
         )
-    #option = '-'
+    option = '-'
     if dataset == 'Licencia otorgada':
-        #option = 'licencia otorgada'
+        option = 'licencia otorgada'
         st.write('*Gráfico')
         @st.cache
         def otorgada_data():
