@@ -42,8 +42,8 @@ if selected == 'Analisis':
     dataset= st.selectbox(
         'Indicación',
         ('Licencia ortorgada',
-         '2'
-         '3'
+         '2',
+         '3',
          '4')
     )
     if dataset == 'Licencia otorgada':
