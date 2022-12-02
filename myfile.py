@@ -50,8 +50,15 @@ if chart_select=="diagram de dispersion":
     try:
       x_valores=st.sidebar.selectbox("X axis",options=[numeric_columns])
       y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
-      plot=px.scatter(data_frame=df , x=x_values,y=y_values)
-      #monitor de grafico de visualizacion
+      st.line_chart(data=uploaded_file, x=x_valores, y=y_valores)
+      
       
     except Exception as e :
         print(e)
+
+
+
+    
+
+
+
