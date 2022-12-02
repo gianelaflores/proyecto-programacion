@@ -1,5 +1,4 @@
 import streamlit as st
-import plotly.express as px
 import pandas as pd
 
 #titulo del app
@@ -53,6 +52,6 @@ if chart_select=="diagram de dispersion":
       y_valores=st.sidebar.selectbox("Y axis",options=[numeric_columns])
       plot=px.scatter(data_frame=df , x=x_values,y=y_values)
       #monitor de grafico de visualizacion
-      st.plotly_chart(plot)
+      
     except Exception as e :
         print(e)
