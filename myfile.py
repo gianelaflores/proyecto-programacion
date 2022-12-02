@@ -1,10 +1,10 @@
-# pip install streamlit --upgrade
+#$ pip install streamlit --upgrade 
 import streamlit as st
 import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 
 st.set_page_config(layout="wide", initial_sidebar_state='expanded')
@@ -44,9 +44,9 @@ if selected == 'Analisis':
         'Indicación',
         ('Licencia ortorgada', '2','3','4')
     )
-    #option:'-'
+    option:'-'
     if dataset == 'Licencia otorgada':
-        #option='otorgada'
+        option='otorgada'
         st.write('Grafico.')
         @st.cache
         def otorgada_data():
