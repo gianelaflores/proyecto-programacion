@@ -29,7 +29,7 @@ except Exception as e:
     print(e)
     st.write("porfavor subir archivopara la aplicacion")
 #agregar a seleccion de barra
-chart_select= st.siderbar.selectbox( label="seleccionar el tipo grafico" ,
+chart_select= st.sidebar.selectbox( label="seleccionar el tipo grafico" ,
                                       options= ["histograma", "intervalos"])
 
 if chart_select=="histograma":
