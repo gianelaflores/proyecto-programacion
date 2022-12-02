@@ -36,15 +36,16 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
 
-    
+#--    
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')    
 if selected == 'Analisis':
     dataset= st.selectbox(
         'Indicación',
         ('Licencia ortorgada', '2','3','4')
     )
+    #option:'-'
     if dataset == 'Licencia otorgada':
-        option:'-'
+        #option='otorgada'
         st.write('Grafico.')
         @st.cache
         def otorgada_data():
