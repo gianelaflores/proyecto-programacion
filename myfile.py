@@ -58,8 +58,6 @@ if selected == 'Inicio':
     st.subheader("Proceso de licenciamiento institucional")
     image = Image.open('proceso.jpeg')
     st.image(image)
-    
-
     @st.experimental_memo
 
 #---------------------------------------------------------------------------------------------------------------------------------
