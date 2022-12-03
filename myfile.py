@@ -78,6 +78,15 @@ df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-pr
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
 #----------------------------------
 #GRAFICO 
+def download_data():
+        url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
+        filename ="Licenciamiento%20Institucional_7.csv"
+        urllib.request.urlretrieve(url,filename)
+        df_cat = pd.read_csv('Licenciamiento%20Institucional_7.csv') 
+        return df_cat
+    download_data()
+    st.dataframe(download_data())
+
 if selected == 'Analisis':
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
