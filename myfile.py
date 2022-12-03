@@ -62,12 +62,12 @@ if selected == 'Inicio':
 
     @st.experimental_memo
 
-#--------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------------
 #EQUIPO
 if selected =='Equipo':
-    image = Image.open('equipo.png')
-    st.image(image) 
-    
+     image = Image.open('equipo.png')
+     st.image(image) 
+#-------------------------------------------------------------------------------------------------------------------------------------    
 if selected == 'Analisis':
     st.header("Dataset")
     st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion")
