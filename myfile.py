@@ -98,7 +98,7 @@ if selected == "Analisis":
     st.markdown("###") 
     st.header('GRAFICO 3: UNIVERSIDADES EXISTENTES POR DISTRITO')
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
-    df_dist = pd.DataFrame(df["DISTRIRO"].value_counts())
+    df_dist = pd.DataFrame(df["DISTRITO"].value_counts())
     st.bar_chart(df_dist)
 
 
