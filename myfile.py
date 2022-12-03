@@ -146,10 +146,11 @@ if selected == "Analisis":
     st.markdown("###")
     st.pyplot(fig1)
     
-#--------------------------------------------------------------------------------------------------------------------    
+#-------------------------------------------------------------------------------------------------------------------- 
+# DISPERSION 
     st.markdown("###")
     st.header('GRÁFICO 5:PERIODO DE LICENCIAMIENTO-UNIVERSIDAD')
-    st.write("El seguiente grafico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un código (CODIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
+    st.write("El seguiente gráfico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un código (CÓDIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
     datos=pd.read_csv(urp,sep=',')
@@ -163,8 +164,9 @@ if selected == "Analisis":
           return df_cat
     download_data()
     st.dataframe(download_data())
-        
+#-----------------------------------------------------------------------------------------------------------------        
     #grafico circulo
+    st.header("GRÁFICO 6: UNIVERIDADES LICENCIADAS Y NO LICENCIADAS")
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
