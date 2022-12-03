@@ -87,7 +87,9 @@ if selected == 'Analisis':
     st.pyplot(fig2)
 #-----------------------------------------------------------------------------------------------------------------------------------
 #df
-
+df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
+#-------------------------------------------------------------------------------------------------------------------------------------
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Licencia otorgada',
@@ -111,6 +113,23 @@ if selected == 'Analisis':
         st.map(data)        
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
+    elif dataset == 'Licencia denegada':
+        option = 'licencia denegada'
+        st.markdown("###")
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        @st.cache
+        def denegada_data():
+            df_denegada = pd.read_csv('nolicenciadas.csv')
+            df_denegada = df_denegada.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_denegada
+        data = denegada_data()
+        st.map(data)
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.dataframe(df_denegada)
+    
         
         
         #grafico lineas
