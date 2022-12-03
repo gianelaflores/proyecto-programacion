@@ -131,7 +131,7 @@ df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proye
         datos=pd.read_csv(urp,sep=',')
         st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
          
-        def download_data():
+    def download_data():
           url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv"
           filename ="MODIFICADA%20TABLA%20SUNEDU.csv"
           urllib.request.urlretrieve(url,filename)
