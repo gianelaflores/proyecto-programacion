@@ -66,8 +66,9 @@ if selected == 'Inicio':
     st.dataframe(download_data())
 
 #--------------------------------------------------------------------------------------------------------------
+#EQUIPO
 if selected == 'Equipo':
-    image = Image.open('amigos.jpg')
+    image = Image.open('equipo.jpg')
     st.image(image) 
     
 #---------------------------------------    
