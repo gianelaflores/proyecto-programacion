@@ -64,7 +64,7 @@ if selected=="Equipo" :
 #-------------------------------------------------------------------------------------------------------------------------------------    
 if selected == "Analisis":
     st.header("Dataset")
-    st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion:")
+    st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresión:")
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
@@ -142,13 +142,14 @@ if selected == "Analisis":
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('**Gráfico 2. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
+    st.write('**Gráfico 4.1. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.pyplot(fig1)
     
 #--------------------------------------------------------------------------------------------------------------------    
-    
-    
+    st.hearder("GRAFICO 5:PERIODO DE LICENCIAMIENTO /UNIVERDIDAD")
+    st.write("El seguiente grafico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un codigo (CODIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
+
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
     datos=pd.read_csv(urp,sep=',')
