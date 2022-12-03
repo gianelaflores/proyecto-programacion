@@ -69,10 +69,76 @@ if selected == 'Analisis':
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
+      if dataset == 'Licencia denegada':
+        option = 'licencia denegada'
+        st.markdown("###")
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        @st.cache
+        def denegada_data():
+            df_denegada = pd.read_csv('nolicenciadas.csv')
+            df_denegada = df_denegada.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_denegada
+        data = denegada_data()
+        st.map(data)
+       # st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+       # st.dataframe(df_denegada)
+       # n = len(df_denegada.axes[0])
+      if dataset == 'Con informe de observaciones (IO) notificado':
+        option = 'informe de observaciones (IO) notificado'
+        st.markdown("###")
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        @st.cache
+        def io_data():
+            df_io = pd.read_csv('IO.csv')
+            df_io = df_io.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_io
+        data = io_data()
+        st.map(data)
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.dataframe(df_io)
+        n = len(df_io.axes[0])
+        
+      if dataset == 'Ninguno':
+        option = 'ningún estado de licenciamiento'
+        st.markdown("###")
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        @st.cache
+        def ninguno_data():
+            df_ninguno = pd.read_csv('Ninguno.csv')
+            df_ninguno = df_ninguno.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_ninguno
+        data = ninguno_data()
+        st.map(data)
+        
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.dataframe(df_ninguno)
+        n = len(df_ninguno.axes[0])
+     
+    st.write('Se encontraron', n,'registros de universidades para esta busqueda')
+
+        
         #grafico lineas
         urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
         datos=pd.read_csv(urp,sep=',')
         st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
+        
+         def download_data():
+        url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv"
+        filename ="MODIFICADA%20TABLA%20SUNEDU.csv"
+        urllib.request.urlretrieve(url,filename)
+        df_cat = pd.read_csv('MODIFICADA%20TABLA%20SUNEDU.csv') 
+        return df_cat
+    download_data()
+    st.dataframe(download_data())
         
         #grafico circulo
         df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
