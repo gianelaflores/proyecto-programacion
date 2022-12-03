@@ -73,7 +73,7 @@ if selected == 'Analisis':
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
-      if dataset == 'no licenciada':
+      if dataset == 'no otorgada':
         option = 'no otorgada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
