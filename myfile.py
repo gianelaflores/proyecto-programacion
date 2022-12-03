@@ -100,7 +100,7 @@ dataset = st.selectbox(
         )
     #option = '-'
     if dataset == 'Licencia otorgada':
-        option = 'Licencia otorgada'
+        option = 'licencia otorgada'
         st.write('*Gráfico')
         @st.cache
         def otorgada_data():
@@ -115,24 +115,6 @@ dataset = st.selectbox(
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
-     elif dataset == 'Licencia denegada':
-        option = 'Licencia denegada'
-        st.markdown("###")
-        #st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
-        @st.cache
-        def denegada_data():
-            df_denegada = pd.read_csv('nolicenciadas.csv')
-            df_denegada = df_denegada.rename(columns={
-                'LATITUD':'lat',
-                'LONGITUD':'lon',
-            })
-            return df_denegada
-        data = denegada_data()
-        st.map(data)
-        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
-        #st.dataframe(df_denegada)
-        #n = len(df_denegada.axes[0])
-    
         
         #grafico lineas
         urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
