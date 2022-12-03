@@ -112,8 +112,8 @@ df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyec
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
-    elif dataset == 'Licencia denegada':
-        option = 'licencia denegada'
+     elif dataset == 'Licencia denegada':
+        option = 'Licencia denegada'
         st.markdown("###")
         #st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
