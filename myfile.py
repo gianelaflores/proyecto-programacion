@@ -70,7 +70,7 @@ if selected == 'Analisis':
         #st.dataframe(df_otorgada)  
         
       if dataset == 'no otorgada':
-        option = 'licencia denegada'
+        #option = 'licencia denegada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
@@ -87,7 +87,7 @@ if selected == 'Analisis':
        # st.dataframe(df_denegada)
        # n = len(df_denegada.axes[0])
       if dataset == 'Con informe de observaciones (IO) notificado':
-        option = 'informe de observaciones (IO) notificado'
+        #option = 'informe de observaciones (IO) notificado'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
@@ -105,7 +105,7 @@ if selected == 'Analisis':
         n = len(df_io.axes[0])
         
       if dataset == 'Ninguno':
-        option = 'ningún estado de licenciamiento'
+        #option = 'ningún estado de licenciamiento'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
