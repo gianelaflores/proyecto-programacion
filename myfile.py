@@ -26,7 +26,7 @@ with st.sidebar:
     
 #--------------------------------------------------------------------------------------------------------------------------------
 #introduccion
-if selected == 'Inicio':
+if selected =="Inicio":
     st.markdown("<h1 style ='text-align: center'>LICENCIAMIENTO INSTITUCIONAL</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader("¿Que es SUNEDU?")
@@ -67,12 +67,12 @@ if selected == 'Inicio':
     @st.experimental_memo
 
 #---------------------------------------------------------------------------------------------------------------------------------
-if selected == "Equipo":
+if selected =="Equipo":
     image = Image.open('equipo.png')
     st.image(image)
     
 #-------------------------------------------------------------------------------------------------------------------------------------    
-if selected == 'Analisis':
+if selected =="Analisis":
     
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
