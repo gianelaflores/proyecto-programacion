@@ -31,6 +31,9 @@ if selected == 'Inicio':
     st.markdown("---")
     st.subheader("¿Que es SUNEDU?")
     st.write("La Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) es el organismo público adscrito al Ministerio de Educación, que garantiza una oferta educativa de calidad en favor de los estudiantes, a través del licenciamiento y supervisión, con eficiencia, predictibilidad, transparencia y respeto a la autonomía universitaria.")
+    image = Image.open('sunedu.jpg')
+    st.image(image)
+    
     st.header("Dataset")
     @st.experimental_memo
              
