@@ -64,16 +64,16 @@ if selected == 'Equipo':
     st.image(image) 
     
 #---------------------------------------    
-#INTENTO
+#GRAFICO 
 if selected == 'Analisis':
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
-    pie_chart = df.DEPARTAMENTO.value_counts()
+    pie_chart = df.TIPO_GESTION.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()
-    pie_chart.columns = ['DEPARTAMENTO','TOTAL']
+    pie_chart.columns = ['TIPO_GESTION','TOTAL']
     fig2, ax2 = plt.subplots()
-    ax2.pie(pie_chart['TOTAL'], labels = pie_chart['DEPARTAMENTO'], autopct='%1.1f%%')
+    ax2.pie(pie_chart['TOTAL'], labels = pie_chart['TIPO_GESTION'], autopct='%1.1f%%')
     ax2.axis('equal')
     st.write('Gráfico')
     st.pyplot(fig2)
