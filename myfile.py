@@ -94,19 +94,20 @@ if selected == "Analisis":
     df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
     st.bar_chart(df_dep)
 #----------------------------------------------------------------------------------------------------------------------------------------
+#BARRAS POR PROVINCIA
+    st.markdown("###") 
+    st.header('GRAFICO 3: UNIVERSIDADES EXISTENTES POR PROVINCIA')
+    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
+    df_pro = pd.DataFrame(df["PROVINCIA"].value_counts())
+    st.bar_chart(df_pro)
+#------------------------------------------------------------------------------------------------------
 #BARRAS POR DISTRITO
     st.markdown("###") 
-    st.header('GRAFICO 3: UNIVERSIDADES EXISTENTES POR DISTRITO')
+    st.header('GRAFICO 4: UNIVERSIDADES EXISTENTES POR DISTRITO')
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
     df_dist = pd.DataFrame(df["DISTRITO"].value_counts())
     st.bar_chart(df_dist)
-
-
-
-
-
-
-
+#------------------------------------------------------------------------------------------------------------------------------
 
 
     #grafico lineas
