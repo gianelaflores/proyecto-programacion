@@ -79,14 +79,13 @@ if selected == 'Analisis':
         urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
         datos=pd.read_csv(urp,sep=',')
         st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
-        
-     @st.experimental_memo   
-     def download_data():
-        url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv"
-        filename ="MODIFICADA%20TABLA%20SUNEDU.csv"
-        urllib.request.urlretrieve(url,filename)
-        df_cat = pd.read_csv('MODIFICADA%20TABLA%20SUNEDU.csv') 
-        return df_cat
+         
+        def download_data():
+          url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv"
+          filename ="MODIFICADA%20TABLA%20SUNEDU.csv"
+          urllib.request.urlretrieve(url,filename)
+          df_cat = pd.read_csv('MODIFICADA%20TABLA%20SUNEDU.csv') 
+          return df_cat
     download_data()
     st.dataframe(download_data())
         
