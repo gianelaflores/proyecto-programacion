@@ -68,7 +68,7 @@ if selected == 'Inicio':
 #--------------------------------------------------------------------------------------------------------------
 #EQUIPO
 if selected == 'Equipo':
-    image = Image.open('equipo.jpg')
+    image = Image.open('equipo.png')
     st.image(image) 
     
 #---------------------------------------    
