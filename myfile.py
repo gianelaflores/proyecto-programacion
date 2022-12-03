@@ -53,11 +53,11 @@ df_ninguno=pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto
 #--------------------------------------------
 if selected == 'Analisis':
     dataset = st.selectbox(
-        'Seleccione una opción:LICENCIA...',
-        ('otorgada','no otorgada','Con informe de observaciones (IO) notificado','Ninguno')
+        'Seleccione:',
+        ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
         )
     #option = '-'
-    if dataset == 'licenciada':
+    if dataset == 'Licencia otorgada':
         option = 'otorgada'
         st.write('*Gráfico')
         @st.cache
@@ -73,7 +73,7 @@ if selected == 'Analisis':
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
-      if dataset == 'no licenciada':
+     elif  dataset == 'Licencia denegada':
         option = 'no otorgada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
@@ -90,7 +90,7 @@ if selected == 'Analisis':
        # st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
        # st.dataframe(df_denegada)
        # n = len(df_denegada.axes[0])
-      if dataset == 'Con informe de observaciones (IO) notificado':
+      elif dataset == 'Con informe de observaciones (IO) notificado':
         #option = 'informe de observaciones (IO) notificado'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
@@ -108,7 +108,7 @@ if selected == 'Analisis':
         st.dataframe(df_io)
         n = len(df_io.axes[0])
         
-      if dataset == 'Ninguno':
+     elif dataset == 'Ninguno':
         #option = 'ningún estado de licenciamiento'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
