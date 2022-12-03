@@ -87,6 +87,15 @@ if selected == "Analisis":
     st.write('Gráfico')
     st.pyplot(fig2)
 #-----------------------------------------------------------------------------------------------------------------------------------
+#BARRAS
+    st.markdown("###") 
+    st.header('¡Comienza el análisis exploratorio!')
+    st.write('**Gráfico 1. Registro (en general) de la cantidad de universidades existentes por departamento.**')
+    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
+    df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
+    st.bar_chart(df_dep)
+
+
     
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
@@ -103,14 +112,7 @@ if selected == "Analisis":
     st.dataframe(download_data())
     
     
-    
-    
-   #    st.markdown("###") 
-    st.header('¡Comienza el análisis exploratorio!')
-    st.write('**Gráfico 1. Registro (en general) de la cantidad de universidades existentes por departamento.**')
-    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
-    df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
-    st.bar_chart(df_dep)
+#------------------------------------------------------------------------------------------------------------------------------------------------
     
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
     st.markdown("###")
