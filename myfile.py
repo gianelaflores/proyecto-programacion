@@ -175,7 +175,7 @@ if selected == "Analisis":
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('A continuación,el grafico describe el porcentaje de universidades con la licencia otorgadas y denegadas')
+    st.write('A continuación,el gráfico describe el porcentaje de universidades con la licencia otorgadas y denegadas')
     st.pyplot(fig1)
 #-----------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
