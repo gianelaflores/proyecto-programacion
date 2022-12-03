@@ -45,12 +45,7 @@ if selected == 'Equipo':
     st.image(image) 
     
 #---------------------------------------    
-df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
-df_denegada=pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
-df_io=pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
-df_ninguno=pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
 
-#--------------------------------------------
 if selected == 'Analisis':
     dataset = st.selectbox(
         'Seleccione:',
@@ -90,7 +85,7 @@ if selected == 'Analisis':
     st.dataframe(download_data())
         
         #grafico circulo
-     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
+        df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
         pie_chart = df.ESTADO_LICENCIAMIENTO.value_counts()
         pie_chart = pd.DataFrame(pie_chart)
         pie_chart = pie_chart.reset_index()
