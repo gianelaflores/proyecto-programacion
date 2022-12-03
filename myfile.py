@@ -88,7 +88,7 @@ if selected == 'Analisis':
 #-----------------------------------------------------------------------------------------------------------------------------------
 #df
 
-dataset = st.selectbox(
+    dataset = st.selectbox(
         'Seleccione una opción:',
         ('Licencia otorgada',
          'Licencia denegada',
@@ -97,7 +97,7 @@ dataset = st.selectbox(
         )
     #option = '-'
     if dataset == 'Licencia otorgada':
-        option = 'licencia otorgada'
+        option = 'Licencia otorgada'
         st.write('*Gráfico')
         @st.cache
         def otorgada_data():
