@@ -101,6 +101,55 @@ if selected == "Analisis":
           return df_cat
     download_data()
     st.dataframe(download_data())
+    
+    
+    
+    
+   #    st.markdown("###") 
+    st.header('¡Comienza el análisis exploratorio!')
+    st.write('**Gráfico 1. Registro (en general) de la cantidad de universidades existentes por departamento.**')
+    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
+    st.bar_chart(df_dep)
+    
+    st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
+    st.markdown("###")
+    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
+    
+    set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
+    sel1 = st.selectbox('Seleccione un departamento:', set1)
+    df_DEPARTAMENTO = df[df['DEPARTAMENTO'] == sel1]
+    n = len(df_DEPARTAMENTO.axes[0])
+    
+    set2 = np.sort(df_DEPARTAMENTO['PROVINCIA'].dropna().unique())
+    sel2 = st.selectbox('Seleccione una provincia:', set2)
+    df_PROVINCIA = df_DEPARTAMENTO[df_DEPARTAMENTO['PROVINCIA'] == sel2]
+    n = len(df_PROVINCIA.axes[0]) 
+    
+    set3 = np.sort(df_DEPARTAMENTO['DISTRITO'].dropna().unique())
+    sel3 = st.selectbox('Seleccione un distrito:', set3)
+    df_DISTRITO = df_DEPARTAMENTO[df_DEPARTAMENTO['DISTRITO'] == sel3]
+    n = len(df_DISTRITO.axes[0])
+    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
+    
+    st.markdown("###")
+    pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
+    pie_chart = pd.DataFrame(pie_chart)
+    pie_chart = pie_chart.reset_index()
+    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
+    fig1, ax1 = plt.subplots()
+    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.axis('equal')
+    st.write('**Gráfico 2. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
+    st.markdown("###")
+    st.pyplot(fig1)
+    
+    
+    
+    
+    
+    
         
     #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
