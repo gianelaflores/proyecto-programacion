@@ -108,7 +108,7 @@ if selected == "Analisis":
    #    st.markdown("###") 
     st.header('¡Comienza el análisis exploratorio!')
     st.write('**Gráfico 1. Registro (en general) de la cantidad de universidades existentes por departamento.**')
-    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
     df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
     st.bar_chart(df_dep)
     
