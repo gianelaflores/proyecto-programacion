@@ -46,17 +46,9 @@ if selected == 'Inicio':
     st.write("Condición V: Responsabilidad social universitaria y bienestar universitario")
     st.write("Condición VI: Transparencia")
     st.write("Estas condiciones básicas de calidad han sido determinadas con la finalidad de que las universidades nuevas cuenten con una propuesta humanística, científica y tecnológica orientada a la investigación Teniendo como pilar el desarrollo de la docencia universitaria que cuenten con los recursos económicos y financieros que aseguran su sostenibilidad y sean conducidas por personas que tienen la legitimidad e idoneidad técnica y moral.")
-    st.subheader("")
-
-
-
+    
     st.header("Dataset")
     @st.experimental_memo
-             
-             
-             
-             
-             
     def download_data():
         url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
         filename ="Licenciamiento%20Institucional_7.csv"
@@ -66,14 +58,30 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
 
-#--
+#--------------------------------------------------------------------------------------------------------------
 if selected == 'Equipo':
     image = Image.open('amigos.jpg')
     st.image(image) 
     
 #---------------------------------------    
-
+#INTENTO
 if selected == 'Analisis':
+     #grafico circulo
+    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
+    pie_chart = df.DEPARTAMENTO.value_counts()
+    pie_chart = pd.DataFrame(pie_chart)
+    pie_chart = pie_chart.reset_index()
+    pie_chart.columns = ['DEPARTAMENTO','TOTAL']
+    fig2, ax2 = plt.subplots()
+    ax2.pie(pie_chart['TOTAL'], labels = pie_chart['DEPARTAMENTO'], autopct='%1.1f%%')
+    ax2.axis('equal')
+    st.write('Gráfico')
+    st.pyplot(fig2)
+ 
+    
+    
+    
+   
     dataset = st.selectbox(
         'Seleccione:',
         ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
