@@ -114,7 +114,7 @@ if selected == "Analisis":
     
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
     st.markdown("###")
-    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
     df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
     
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
