@@ -18,7 +18,7 @@ with st.sidebar:
     st.sidebar.header ('Programación') 
     selected= option_menu(
         menu_title='Menú',
-        options=['Inicio','Equipo','Analisis','reporte'],
+        options=['Inicio','Equipo','Analisis','Mapa'],
         icons=['house','person','book','book'],
         menu_icon='cast',
         default_index= 0,
@@ -74,6 +74,9 @@ if selected == 'Equipo':
 #---------------------------------------  
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
+df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/notificado.csv')
+df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
+#----------------------------------
 #GRAFICO 
 if selected == 'Analisis':
      #grafico circulo
@@ -88,7 +91,7 @@ if selected == 'Analisis':
     st.write('Gráfico')
     st.pyplot(fig2)
 #-----------------------------------------------------------------------------------------------------------------------------------
-#-------------------------------------------------------------------------------------------------------------------------------------
+if selected=="Mapa":
     dataset = st.selectbox('Seleccione una opción:',('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno'))
     #option = '-'
     if dataset == 'Licencia otorgada':
@@ -122,6 +125,45 @@ if selected == 'Analisis':
         st.map(data)
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_denegada)
+        
+    elif dataset == 'Con informe de observaciones (IO) notificado':
+        option = 'informe de observaciones (IO) notificado'
+        st.markdown("###")
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        @st.cache
+        def io_data():
+            df_io = pd.read_csv('notificado.csv')
+            df_io = df_io.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_io
+        data = io_data()
+        st.map(data)
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.dataframe(df_io)
+        n = len(df_io.axes[0])
+        
+    elif dataset == 'Ninguno':
+        option = 'ningún estado de licenciamiento'
+        st.markdown("###")
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        @st.cache
+        def ninguno_data():
+            df_ninguno = pd.read_csv('ninguno.csv')
+            df_ninguno = df_ninguno.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_ninguno
+        data = ninguno_data()
+        st.map(data)
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.dataframe(df_ninguno)
+        n = len(df_ninguno.axes[0])
+     
+    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')   
+    
     
         
         
