@@ -90,13 +90,7 @@ if selected == 'Analisis':
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
 #-------------------------------------------------------------------------------------------------------------------------------------
-    dataset = st.selectbox(
-        'Seleccione una opción:',
-        ('Licencia otorgada',
-         'Licencia denegada',
-         'Con informe de observaciones (IO) notificado',
-         'Ninguno')
-        )
+    dataset = st.selectbox('Seleccione una opción:',('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno'))
     #option = '-'
     if dataset == 'Licencia otorgada':
         option = 'Licencia otorgada'
@@ -114,7 +108,7 @@ df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proye
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
     elif dataset == 'Licencia denegada':
-        option = 'licencia denegada'
+        option = 'Licencia denegada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
