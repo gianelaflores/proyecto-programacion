@@ -121,7 +121,7 @@ if selected == "Analisis":
     sel1 = st.selectbox('Seleccione un departamento:', set1)
     df_DEPARTAMENTO = df[df['DEPARTAMENTO'] == sel1]
     n = len(df_DEPARTAMENTO.axes[0])
-    -
+
     set2 = np.sort(df_DEPARTAMENTO['PROVINCIA'].dropna().unique())
     sel2 = st.selectbox('Seleccione una provincia:', set2)
     df_PROVINCIA = df_DEPARTAMENTO[df_DEPARTAMENTO['PROVINCIA'] == sel2]
