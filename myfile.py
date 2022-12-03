@@ -58,7 +58,7 @@ if selected == 'Analisis':
         )
     #option = '-'
     if dataset == 'Licencia otorgada':
-        option = 'otorgada'
+        option = 'Licencia otorgada'
         st.write('*Gráfico')
         @st.cache
         def otorgada_data():
@@ -74,7 +74,7 @@ if selected == 'Analisis':
         #st.dataframe(df_otorgada)  
         
      elif  dataset == 'Licencia denegada':
-        option = 'no otorgada'
+        option = 'Licencia denegada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
