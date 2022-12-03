@@ -68,12 +68,10 @@ if selected =="Inicio":
 
 #---------------------------------------------------------------------------------------------------------------------------------
 if selected =="Equipo":
-        image = Image.open('equipo.png')
-        st.image(image)
-    
+    image = Image.open('equipo.png')
+    st.image(image)  
 #-------------------------------------------------------------------------------------------------------------------------------------    
 if selected =="Analisis":
-    
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.TIPO_GESTION.value_counts()
@@ -117,7 +115,6 @@ df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proye
 df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/notificado.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
 #-------------------------------------------------------------------------------------------------------------------------------------
-
 if selected=="Mapa":
     dataset = st.selectbox('Seleccione una opción:',('Licenciadas','No Licenciadas','Con informe de observaciones/notificado','Ninguno'))
     #option = '-'
