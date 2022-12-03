@@ -49,11 +49,11 @@ df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proye
 
 if selected == 'Analisis':
     dataset = st.selectbox(
-        'Seleccione una opción:',
+        'Seleccione una opción:LICENCIA...',
         ('otorgada','no otorgada','Con informe de observaciones (IO) notificado','Ninguno')
         )
     #option = '-'
-    if dataset == 'Licencia otorgada':
+    if dataset == 'otorgada':
         #option = 'licencia otorgada'
         st.write('*Gráfico')
         @st.cache
