@@ -86,17 +86,15 @@ if selected == "Analisis":
     ax2.axis('equal')
     st.write('Gráfico')
     st.pyplot(fig2)
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------
 #BARRAS
     st.markdown("###") 
-    st.header('¡Comienza el análisis exploratorio!')
-    st.write('**Gráfico 1. Registro (en general) de la cantidad de universidades existentes por departamento.**')
+    st.header('GRAFICO 2: UNIVERSIDADES EXISTENTES POR DISTRITO')
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
     df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
     st.bar_chart(df_dep)
+#----------------------------------------------------------------------------------------------------------------------------------------
 
-
-    
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
     datos=pd.read_csv(urp,sep=',')
@@ -123,7 +121,7 @@ if selected == "Analisis":
     sel1 = st.selectbox('Seleccione un departamento:', set1)
     df_DEPARTAMENTO = df[df['DEPARTAMENTO'] == sel1]
     n = len(df_DEPARTAMENTO.axes[0])
-    
+    -
     set2 = np.sort(df_DEPARTAMENTO['PROVINCIA'].dropna().unique())
     sel2 = st.selectbox('Seleccione una provincia:', set2)
     df_PROVINCIA = df_DEPARTAMENTO[df_DEPARTAMENTO['PROVINCIA'] == sel2]
