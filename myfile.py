@@ -54,16 +54,8 @@ if selected == 'Inicio':
     image = Image.open('proceso.jpeg')
     st.image(image)
     
-    st.header("Dataset")
+
     @st.experimental_memo
-    def download_data():
-        url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
-        filename ="Licenciamiento%20Institucional_7.csv"
-        urllib.request.urlretrieve(url,filename)
-        df_cat = pd.read_csv('Licenciamiento%20Institucional_7.csv') 
-        return df_cat
-    download_data()
-    st.dataframe(download_data())
 
 #--------------------------------------------------------------------------------------------------------------
 #EQUIPO
@@ -71,13 +63,15 @@ if selected == 'Equipo':
     image = Image.open('equipo.png')
     st.image(image) 
     
-#---------------------------------------  
+#----------------------------------------------------------------------------------------------------------------------------------  
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/notificado.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
-#----------------------------------
-#GRAFICO 
+#-------------------------------------------------------------------------------------------------------------------------------------
+#DATA-SET
+st.header("Dataset")
+st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion")
 def download_data():
         url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
         filename ="Licenciamiento%20Institucional_7.csv"
