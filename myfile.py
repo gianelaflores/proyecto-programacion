@@ -71,7 +71,9 @@ if selected == 'Equipo':
     image = Image.open('equipo.png')
     st.image(image) 
     
-#---------------------------------------    
+#---------------------------------------  
+df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
 #GRAFICO 
 if selected == 'Analisis':
      #grafico circulo
@@ -86,9 +88,6 @@ if selected == 'Analisis':
     st.write('Gráfico')
     st.pyplot(fig2)
 #-----------------------------------------------------------------------------------------------------------------------------------
-#df
-df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
-df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
 #-------------------------------------------------------------------------------------------------------------------------------------
     dataset = st.selectbox('Seleccione una opción:',('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno'))
     #option = '-'
