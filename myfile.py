@@ -61,9 +61,7 @@ if selected == 'Inicio':
     @st.experimental_memo
 
 #---------------------------------------------------------------------------------------------------------------------------------
-if selected == "Equipo":
-    image = Image.open('equipo.png')
-    st.image(image)
+
     
 #-------------------------------------------------------------------------------------------------------------------------------------    
 if selected == 'Analisis':
@@ -189,7 +187,10 @@ if selected=="Mapa":
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
- 
+    
+if selected == "Equipo":
+    image = Image.open('equipo.png')
+    st.image(image)
 
         
                                              
