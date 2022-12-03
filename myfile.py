@@ -44,17 +44,17 @@ if selected == 'Equipo':
     image = Image.open('amigos.jpg')
     st.image(image) 
     
-#--    
+#---------------------------------------    
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
-
+#--------------------------------------------
 if selected == 'Analisis':
     dataset = st.selectbox(
         'Seleccione una opción:LICENCIA...',
         ('otorgada','no otorgada','Con informe de observaciones (IO) notificado','Ninguno')
         )
     #option = '-'
-    if dataset == 'otorgada':
-        #option = 'licencia otorgada'
+    if dataset == 'licenciada':
+        option = 'otorgada'
         st.write('*Gráfico')
         @st.cache
         def otorgada_data():
@@ -69,8 +69,8 @@ if selected == 'Analisis':
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
-      if dataset == 'no otorgada':
-        #option = 'licencia denegada'
+      if dataset == 'no licenciada':
+        option = 'no otorgada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
