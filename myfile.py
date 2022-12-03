@@ -36,7 +36,7 @@ if selected == 'Inicio':
     
     st.subheader("¿Que es el licenciamiento institucional?")
     st.write("Es un procedimiento obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la SUNEDU que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo.")
-    image = Image.open('proceso.jpge')
+    image = Image.open('proceso.jpeg')
     st.image(image)
     
     st.header("Dataset")
