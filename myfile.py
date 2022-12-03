@@ -53,14 +53,18 @@ if selected =="Inicio":
     image = Image.open('proceso.jpeg')
     st.image(image)
     
-
+    
+    st.subheader("INFORMACION DE DATASET")
+    st.write("Finalmente, para mayor informacion sobre el data set que se analizara puede ingresar al siguiente link :")
+    st.write("https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional")
+#--------------------------------------------------------------------------------------------------------------------------------------
 if selected=="Equipo" :
     image = Image.open('equipo.png')
     st.image(image)  
 #-------------------------------------------------------------------------------------------------------------------------------------    
 if selected == "Analisis":
     st.header("Dataset")
-    st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion")
+    st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion:")
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
@@ -70,6 +74,7 @@ if selected == "Analisis":
         return df_cat
     download_data()
     st.dataframe(download_data())
+    st.subheader("GRAFICO 1: UNIVERSIDADES PUBLICAS Y PRIVADAS") 
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.TIPO_GESTION.value_counts()
@@ -82,6 +87,7 @@ if selected == "Analisis":
     st.write('Gráfico')
     st.pyplot(fig2)
 #-----------------------------------------------------------------------------------------------------------------------------------
+    
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
     datos=pd.read_csv(urp,sep=',')
