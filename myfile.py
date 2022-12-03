@@ -184,8 +184,8 @@ df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-pr
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
 #-------------------------------------------------------------------------------------------------------------------------------------
 if selected== "Mapa":
-    st.header("!INICIEMOS LA BUSQUEDA!")
-    st.write("A continuación , este espacio le permitirá ubicara geograficamente las universidades licenciadas o no licenciadas , etc.Segun usted lo requiera")
+    st.header("!INICIEMOS LA BÚSQUEDA!")
+    st.write("A continuación , este espacio le permitirá ubicara geograficamente las universidades licenciadas o no licenciadas , etc.Según usted lo requiera ")
              
     dataset = st.selectbox('Seleccione una opción:',('Licenciadas','No Licenciadas','Con informe de observaciones/notificado','Ninguno'))
     #option = '-'
