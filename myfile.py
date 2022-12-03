@@ -96,7 +96,7 @@ if selected == 'Analisis':
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
         def io_data():
-            df_io = pd.read_csv('IO.csv')
+            df_io = pd.read_csv('notificado.csv')
             df_io = df_io.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
