@@ -93,7 +93,10 @@ df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-pr
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
     dataset = st.selectbox(
         'Seleccione:',
-        ('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno')
+        ('Licencia otorgada',
+         'Licencia denegada',
+         'Con informe de observaciones (IO) notificado',
+         'Ninguno')
         )
     #option = '-'
     if dataset == 'Licencia otorgada':
