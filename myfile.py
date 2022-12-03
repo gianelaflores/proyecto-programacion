@@ -53,12 +53,7 @@ if selected == 'Inicio':
     st.subheader("Proceso de licenciamiento institucional")
     image = Image.open('proceso.jpeg')
     st.image(image)
-    @st.experimental_memo
-
-#---------------------------------------------------------------------------------------------------------------------------------
-
-#-------------------------------------------------------------------------------------------------------------------------------------    
-if selected == 'Analisis':
+    
     st.header("Dataset")
     st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion")
     def download_data():
@@ -69,6 +64,16 @@ if selected == 'Analisis':
         return df_cat
     download_data()
     st.dataframe(download_data())
+    @st.experimental_memo
+
+#---------------------------------------------------------------------------------------------------------------------------------
+if selected == "Equipo":
+    image = Image.open('equipo.png')
+    st.image(image)
+    
+#-------------------------------------------------------------------------------------------------------------------------------------    
+if selected == 'Analisis':
+    
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.TIPO_GESTION.value_counts()
