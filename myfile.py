@@ -74,7 +74,7 @@ if selected == "Analisis":
         return df_cat
     download_data()
     st.dataframe(download_data())
-    st.subheader("GRAFICO 1: UNIVERSIDADES PUBLICAS Y PRIVADAS") 
+    st.subheader("GRÁFICO 1: UNIVERSIDADES PUBLICAS Y PRIVADAS") 
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.TIPO_GESTION.value_counts()
@@ -89,21 +89,21 @@ if selected == "Analisis":
 #--------------------------------------------------------------------------------------------------------------------------------------
 #BARRAS POR DEPARTAMENTO
     st.markdown("###") 
-    st.header('GRAFICO 2: UNIVERSIDADES EXISTENTES POR DEPARTAMENTO')
+    st.header('GRÁFICO 2: UNIVERSIDADES EXISTENTES POR DEPARTAMENTO')
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
     df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
     st.bar_chart(df_dep)
 #----------------------------------------------------------------------------------------------------------------------------------------
 #BARRAS POR PROVINCIA
     st.markdown("###") 
-    st.header('GRAFICO 3: UNIVERSIDADES EXISTENTES POR PROVINCIA')
+    st.header('GRÁFICO 3: UNIVERSIDADES EXISTENTES POR PROVINCIA')
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
     df_pro = pd.DataFrame(df["PROVINCIA"].value_counts())
     st.bar_chart(df_pro)
 #------------------------------------------------------------------------------------------------------
 #BARRAS POR DISTRITO
     st.markdown("###") 
-    st.header('GRAFICO 4: UNIVERSIDADES EXISTENTES POR DISTRITO')
+    st.header('GRÁFICO 4: UNIVERSIDADES EXISTENTES POR DISTRITO')
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')
     df_dist = pd.DataFrame(df["DISTRITO"].value_counts())
     st.bar_chart(df_dist)
@@ -147,9 +147,9 @@ if selected == "Analisis":
     st.pyplot(fig1)
     
 #--------------------------------------------------------------------------------------------------------------------    
-    st.hearder("GRAFICO 5:PERIODO DE LICENCIAMIENTO /UNIVERDIDAD")
-    st.write("El seguiente grafico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un codigo (CODIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
-
+    st.markdown("###")
+    st.hearder('GRÁFICO 5:PERIODO DE LICENCIAMIENTO-UNIVERSIDAD')
+    st.write("El seguiente grafico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un código (CODIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
     datos=pd.read_csv(urp,sep=',')
