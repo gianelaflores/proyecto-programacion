@@ -46,9 +46,7 @@ if selected == 'Inicio':
     st.write("Condición V: Responsabilidad social universitaria y bienestar universitario")
     st.write("Condición VI: Transparencia")
     st.write("Estas condiciones básicas de calidad han sido determinadas con la finalidad de que las universidades nuevas cuenten con una propuesta humanística, científica y tecnológica orientada a la investigación Teniendo como pilar el desarrollo de la docencia universitaria que cuenten con los recursos económicos y financieros que aseguran su sostenibilidad y sean conducidas por personas que tienen la legitimidad e idoneidad técnica y moral.")
-    
-
-
+    st.subheader("")
 
 
 
