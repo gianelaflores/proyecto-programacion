@@ -84,8 +84,8 @@ def download_data():
         urllib.request.urlretrieve(url,filename)
         df_cat = pd.read_csv('Licenciamiento%20Institucional_7.csv') 
         return df_cat
-    download_data()
-    st.dataframe(download_data())
+ download_data()
+ st.dataframe(download_data())
 
 if selected == 'Analisis':
      #grafico circulo
