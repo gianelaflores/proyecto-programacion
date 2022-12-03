@@ -17,7 +17,7 @@ with st.sidebar:
     st.sidebar.header ('Programación') 
     selected= option_menu(
         menu_title='Menú',
-        options=['Inicio','Equipo','Analisis','Mapa'],
+        options=['Inicio','Equipo','Análisis','Mapa'],
         icons=['house','person','book','book'],
         menu_icon='cast',
         default_index= 0,
@@ -62,9 +62,9 @@ if selected=="Equipo" :
     image = Image.open('equipo.png')
     st.image(image)  
 #-------------------------------------------------------------------------------------------------------------------------------------    
-if selected == "Analisis":
+if selected == "Análisis":
     st.header("Dataset")
-    st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresión:")
+    st.write("En esta sección podrá visualizar el análisis y organización de los datos (SUNEDU) en diferentes gráficos para su mayor compresión:")
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
@@ -74,7 +74,7 @@ if selected == "Analisis":
         return df_cat
     download_data()
     st.dataframe(download_data())
-    st.subheader("GRÁFICO 1: UNIVERSIDADES PUBLICAS Y PRIVADAS") 
+    st.subheader("GRÁFICO 1: UNIVERSIDADES PÚBLICAS Y PRIVADAS") 
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.TIPO_GESTION.value_counts()
@@ -150,7 +150,7 @@ if selected == "Analisis":
 # DISPERSION 
     st.markdown("###")
     st.header('GRÁFICO 5:PERIODO DE LICENCIAMIENTO-UNIVERSIDAD')
-    st.write("El seguiente gráfico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un código (CÓDIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
+    st.write("El siguiente gráfico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un código (CÓDIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
     datos=pd.read_csv(urp,sep=',')
@@ -185,7 +185,7 @@ df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyec
 #-------------------------------------------------------------------------------------------------------------------------------------
 if selected== "Mapa":
     st.header("!INICIEMOS LA BÚSQUEDA!")
-    st.write("A continuación , este espacio le permitirá ubicara geograficamente las universidades licenciadas o no licenciadas , etc.Según usted lo requiera ")
+    st.write("A continuación , este espacio le permitirá ubicar geograficamente las universidades licenciadas o no licenciadas , etc.Según usted lo requiera ")
              
     dataset = st.selectbox('Seleccione una opción:',('Licenciadas','No Licenciadas','Con informe de observaciones/notificado','Ninguno'))
     #option = '-'
