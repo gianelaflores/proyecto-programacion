@@ -69,10 +69,10 @@ df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proye
 df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/notificado.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
 #-------------------------------------------------------------------------------------------------------------------------------------
-#DATA-SET
-st.header("Dataset")
-st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion")
-def download_data():
+if selected == 'Analisis':
+    st.header("Dataset")
+    st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion")
+    def download_data():
         url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
         filename ="Licenciamiento%20Institucional_7.csv"
         urllib.request.urlretrieve(url,filename)
@@ -80,8 +80,6 @@ def download_data():
         return df_cat
 download_data()
 st.dataframe(download_data())
-
-if selected == 'Analisis':
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.TIPO_GESTION.value_counts()
