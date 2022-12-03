@@ -55,7 +55,7 @@ if selected =="Inicio":
     
     
     st.subheader("INFORMACION DE DATASET")
-    st.write("Finalmente, para mayor informacion sobre el data set que se analizara puede ingresar al siguiente link :")
+    st.write("Finalmente, para mayor informacion sobre el data set que se analizará puede ingresar al siguiente link :")
     st.write("https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional")
 #--------------------------------------------------------------------------------------------------------------------------------------
 if selected=="Equipo" :
