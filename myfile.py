@@ -148,7 +148,7 @@ if selected == "Analisis":
     
 #--------------------------------------------------------------------------------------------------------------------    
     st.markdown("###")
-    st.hearder('GRÁFICO 5:PERIODO DE LICENCIAMIENTO-UNIVERSIDAD')
+    st.header('GRÁFICO 5:PERIODO DE LICENCIAMIENTO-UNIVERSIDAD')
     st.write("El seguiente grafico ,presenta el periodo de licenciamiento para cada universidad.Cada universidad se encuentra identificada con un código (CODIGO DE IDENTIDAD).En la parte inferior encontrará una tabla con el código perteneciente a cada universidad.")
     #grafico lineas
     urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
