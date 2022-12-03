@@ -87,10 +87,7 @@ if selected == 'Analisis':
     st.pyplot(fig2)
 #-----------------------------------------------------------------------------------------------------------------------------------
 #df
-df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
-df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
-df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/notificado.csv')
-df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
+
 dataset = st.selectbox(
         'Seleccione una opción:',
         ('Licencia otorgada',
