@@ -31,13 +31,14 @@ if selected == 'Inicio':
     st.markdown("---")
     st.subheader("¿Que es SUNEDU?")
     st.write("La Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) es el organismo público adscrito al Ministerio de Educación, que garantiza una oferta educativa de calidad en favor de los estudiantes, a través del licenciamiento y supervisión, con eficiencia, predictibilidad, transparencia y respeto a la autonomía universitaria.")
-    image = Image.open('sunedu.jpeg')
-    st.image(image)
+    
     
     st.subheader("¿Que es el licenciamiento institucional?")
     st.write("Es un procedimiento obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la SUNEDU que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo.")
-    image = Image.open('proceso.jpeg')
+    image = Image.open('sunedu.jpeg')
     st.image(image)
+    
+    st.subheader("Condiciones básicas de calidad en la universidad peruana ")
     st.write("Las universidades para poder conseguir la autorización, deberán cumplir con seis condiciones básicas de calidad:")
     st.write("Condición I: Modelo educativo")
     st.write("Condición II: Constitución, gobierno y gestión de la universidad")
@@ -46,6 +47,10 @@ if selected == 'Inicio':
     st.write("Condición V: Responsabilidad social universitaria y bienestar universitario")
     st.write("Condición VI: Transparencia")
     st.write("Estas condiciones básicas de calidad han sido determinadas con la finalidad de que las universidades nuevas cuenten con una propuesta humanística, científica y tecnológica orientada a la investigación Teniendo como pilar el desarrollo de la docencia universitaria que cuenten con los recursos económicos y financieros que aseguran su sostenibilidad y sean conducidas por personas que tienen la legitimidad e idoneidad técnica y moral.")
+    
+    st.subheader("Proceso de licenciamiento institucional")
+    image = Image.open('proceso.jpeg')
+    st.image(image)
     
     st.header("Dataset")
     @st.experimental_memo
