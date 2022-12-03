@@ -5,8 +5,7 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
-from PIL import Image
-#----------------------------------------------------------------------------------------------------------------------------------  
+from PIL import Image 
 
 #------------------------------------------------------------------------------------------------------------------------------------------------
 #MENU
@@ -56,6 +55,7 @@ if selected =="Inicio":
     
     st.header("Dataset")
     st.write("En esta seccion podrá visalizar el análisis y organizacion de los datos (SUNEDU) en diferentes graficos para su mayor compresion")
+    @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv"
         filename ="Licenciamiento%20Institucional_7.csv"
@@ -64,7 +64,6 @@ if selected =="Inicio":
         return df_cat
     download_data()
     st.dataframe(download_data())
-    @st.experimental_memo
 if selected=="Equipo" :
     image = Image.open('equipo.png')
     st.image(image)  
