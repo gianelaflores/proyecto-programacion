@@ -118,9 +118,9 @@ if selected == 'Analisis':
     st.pyplot(fig1)
 #-----------------------------------------------------------------------------------
 if selected=="Mapa":
-    dataset = st.selectbox('Seleccione una opción:',('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno'))
+    dataset = st.selectbox('Seleccione una opción:',('Licenciadas','No Licenciadas','Con informe de observaciones/notificado','Ninguno'))
     #option = '-'
-    if dataset == 'Licencia otorgada':
+    if dataset == 'Licenciadas':
         option = 'Licencia otorgada'
         st.write('*Gráfico')
         @st.cache
@@ -137,7 +137,7 @@ if selected=="Mapa":
         st.dataframe(df_otorgada)  
         n=len(df_otorgada.axes[0])
         
-    elif dataset == 'Licencia denegada':
+    elif dataset == 'No Licenciadas':
         option = 'Licencia denegada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
@@ -155,7 +155,7 @@ if selected=="Mapa":
         st.dataframe(df_denegada)
         n=len(df_denegada.axes[0])
         
-    elif dataset == 'Con informe de observaciones (IO) notificado':
+    elif dataset == 'Con informe de observaciones/notificado':
         option = 'informe de observaciones (IO) notificado'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
