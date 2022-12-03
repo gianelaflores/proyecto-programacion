@@ -7,11 +7,6 @@ import urllib.request
 import matplotlib.pyplot as plt
 from PIL import Image
 #----------------------------------------------------------------------------------------------------------------------------------  
-df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
-df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
-df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/notificado.csv')
-df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
-#-------------------------------------------------------------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------------------------------------------------------------------------
 #MENU
@@ -61,7 +56,9 @@ if selected == 'Inicio':
     @st.experimental_memo
 
 #---------------------------------------------------------------------------------------------------------------------------------
-
+if selected == "Equipo":
+    image = Image.open('equipo.png')
+    st.image(image)
     
 #-------------------------------------------------------------------------------------------------------------------------------------    
 if selected == 'Analisis':
@@ -113,6 +110,12 @@ st.dataframe(download_data())
     st.write('Gráfico')
     st.pyplot(fig1)
 #-----------------------------------------------------------------------------------
+df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+df_denegada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/nolicenciadas.csv')
+df_io = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/notificado.csv')
+df_ninguno = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/ninguno.csv')
+#-------------------------------------------------------------------------------------------------------------------------------------
+
 if selected=="Mapa":
     dataset = st.selectbox('Seleccione una opción:',('Licenciadas','No Licenciadas','Con informe de observaciones/notificado','Ninguno'))
     #option = '-'
@@ -188,9 +191,7 @@ if selected=="Mapa":
         n = len(df_ninguno.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     
-if selected == "Equipo":
-    image = Image.open('equipo.png')
-    st.image(image)
+
 
         
                                              
