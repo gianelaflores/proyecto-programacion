@@ -73,7 +73,7 @@ if selected == 'Analisis':
         #st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         #st.dataframe(df_otorgada)  
         
-      if dataset == 'no otorgada':
+      if dataset == 'no licenciada':
         option = 'no otorgada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
@@ -114,7 +114,7 @@ if selected == 'Analisis':
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
         def ninguno_data():
-            df_ninguno = pd.read_csv('Ninguno.csv')
+            df_ninguno = pd.read_csv('ninguno.csv')
             df_ninguno = df_ninguno.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
