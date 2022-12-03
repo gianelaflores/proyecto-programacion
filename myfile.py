@@ -63,10 +63,10 @@ if selected == 'Inicio':
     @st.experimental_memo
 
 #---------------------------------------------------------------------------------------------------------------------------------
-#EQUIPO
-if selected == 'Equipo':
-     image = Image.open('equipo.png')
-     st.image(image) 
+if selected == "Equipo":
+    image = Image.open('equipo.png')
+    st.image(image)
+    
 #-------------------------------------------------------------------------------------------------------------------------------------    
 if selected == 'Analisis':
     st.header("Dataset")
