@@ -90,7 +90,7 @@ if selected == 'Analisis':
     st.dataframe(download_data())
         
         #grafico circulo
-        df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
+     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
         pie_chart = df.ESTADO_LICENCIAMIENTO.value_counts()
         pie_chart = pd.DataFrame(pie_chart)
         pie_chart = pie_chart.reset_index()
@@ -100,6 +100,7 @@ if selected == 'Analisis':
         ax1.axis('equal')
         st.write('Gráfico')
         st.pyplot(fig1)
+ 
 
         
                                              
