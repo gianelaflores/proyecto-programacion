@@ -46,6 +46,10 @@ if selected == 'Equipo':
     
 #---------------------------------------    
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+df_denegada=pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+df_io=pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+df_ninguno=pd.read_csv('https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/otorgadas.csv')
+
 #--------------------------------------------
 if selected == 'Analisis':
     dataset = st.selectbox(
