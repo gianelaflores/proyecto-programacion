@@ -67,8 +67,8 @@ if selected == 'Analisis':
         urllib.request.urlretrieve(url,filename)
         df_cat = pd.read_csv('Licenciamiento%20Institucional_7.csv') 
         return df_cat
-download_data()
-st.dataframe(download_data())
+ download_data()
+ st.dataframe(download_data())
      #grafico circulo
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.TIPO_GESTION.value_counts()
