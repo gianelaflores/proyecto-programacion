@@ -91,6 +91,32 @@ if selected == 'Analisis':
     st.write('Gráfico')
     st.pyplot(fig2)
 #-----------------------------------------------------------------------------------------------------------------------------------
+     #grafico lineas
+        urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
+        datos=pd.read_csv(urp,sep=',')
+        st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
+         
+    def download_data():
+          url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv"
+          filename ="MODIFICADA%20TABLA%20SUNEDU.csv"
+          urllib.request.urlretrieve(url,filename)
+          df_cat = pd.read_csv('MODIFICADA%20TABLA%20SUNEDU.csv') 
+          return df_cat
+    download_data()
+    st.dataframe(download_data())
+        
+    #grafico circulo
+    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
+    pie_chart = df.ESTADO_LICENCIAMIENTO.value_counts()
+    pie_chart = pd.DataFrame(pie_chart)
+    pie_chart = pie_chart.reset_index()
+    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
+    fig1, ax1 = plt.subplots()
+    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.axis('equal')
+    st.write('Gráfico')
+    st.pyplot(fig1)
+#-----------------------------------------------------------------------------------
 if selected=="Mapa":
     dataset = st.selectbox('Seleccione una opción:',('Licencia otorgada','Licencia denegada','Con informe de observaciones (IO) notificado','Ninguno'))
     #option = '-'
@@ -162,36 +188,7 @@ if selected=="Mapa":
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
      
-    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')   
-    
-    
-        
-        
-        #grafico lineas
-        urp='https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/Licenciamiento%20Institucional_7.csv'
-        datos=pd.read_csv(urp,sep=',')
-        st.line_chart(data=datos,x='CODIGO_ENTIDAD',y='PERIODO_LICENCIAMIENTO')
-         
-    def download_data():
-          url ="https://raw.githubusercontent.com/gianelaflores/proyecto-programacion/documentos/MODIFICADA%20TABLA%20SUNEDU.csv"
-          filename ="MODIFICADA%20TABLA%20SUNEDU.csv"
-          urllib.request.urlretrieve(url,filename)
-          df_cat = pd.read_csv('MODIFICADA%20TABLA%20SUNEDU.csv') 
-          return df_cat
-    download_data()
-    st.dataframe(download_data())
-        
-    #grafico circulo
-    df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
-    pie_chart = df.ESTADO_LICENCIAMIENTO.value_counts()
-    pie_chart = pd.DataFrame(pie_chart)
-    pie_chart = pie_chart.reset_index()
-    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
-    fig1, ax1 = plt.subplots()
-    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
-    ax1.axis('equal')
-    st.write('Gráfico')
-    st.pyplot(fig1)
+    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
  
 
         
