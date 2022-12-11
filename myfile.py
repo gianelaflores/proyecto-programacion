@@ -166,7 +166,7 @@ if selected == "Análisis":
     st.dataframe(download_data())
 #-----------------------------------------------------------------------------------------------------------------        
     #grafico circulo
-    st.header("GRÁFICO 6: UNIVERIDADES LICENCIADAS Y NO LICENCIADAS")
+    st.header("GRÁFICO 6: UNIVERSIDADES LICENCIADAS Y NO LICENCIADAS")
     df = pd.read_csv('Licenciamiento%20Institucional_7.csv')        
     pie_chart = df.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
