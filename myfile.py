@@ -28,13 +28,13 @@ with st.sidebar:
 if selected =="Inicio":
     st.markdown("<h1 style ='text-align: center'>LICENCIAMIENTO INSTITUCIONAL-SUNEDU</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    st.subheader("¿Que es SUNEDU?")
+    st.subheader("¿Qué es SUNEDU?")
     st.write("La Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) es el organismo público adscrito al Ministerio de Educación, que garantiza una oferta educativa de calidad en favor de los estudiantes, a través del licenciamiento y supervisión, con eficiencia, predictibilidad, transparencia y respeto a la autonomía universitaria.")
     video_file = open('video.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
     
-    st.subheader("¿Que es el licenciamiento institucional?")
+    st.subheader("¿Qué es el licenciamiento institucional?")
     st.write("Es un procedimiento obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la SUNEDU que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo.")
     image = Image.open('sunedu.jpeg')
     st.image(image)
